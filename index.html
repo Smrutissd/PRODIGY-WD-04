@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="container">
+    <div class="search-section">
+        <div class="search">
+            <input type="text" placeholder="Search for a city..." id="cityInput">
+            <button onclick="getWeather()"><i class="fas fa-search"></i></button>
+            <button onclick="getCurrentLocation()"><i class="fas fa-location-dot"></i></button>
+        </div>
+        <div class="error-message" id="errorMessage"></div>
+    </div>
+    
+    <div class="weather-info" id="weatherInfo">
+        <div class="weather-header">
+            <div class="city">--</div>
+            <div id="weatherIcon"></div>
+        </div>
+        <div class="temperature">--°C</div>
+        <div class="condition">--</div>
+        <div class="details">
+            <div class="detail-item">
+                <i class="fas fa-water"></i>
+                <div>Humidity</div>
+                <div id="humidity">--%</div>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-wind"></i>
+                <div>Wind Speed</div>
+                <div id="wind">-- km/h</div>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-compress-arrows-alt"></i>
+                <div>Pressure</div>
+                <div id="pressure">-- hPa</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

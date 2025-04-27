@@ -1,0 +1,189 @@
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 30px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .search-section {
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+    }
+
+    .search {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    input {
+        flex: 1;
+        padding: 15px;
+        font-size: 1em;
+        border: none;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    input:focus {
+        outline: none;
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    button {
+        padding: 15px 25px;
+        border: none;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    button:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .weather-info {
+        padding: 30px;
+        color: white;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+    }
+
+    .weather-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .city {
+        font-size: 2.5em;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideUp 0.5s forwards;
+    }
+
+    .temperature {
+        font-size: 5em;
+        font-weight: 500;
+        margin: 20px 0;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideUp 0.5s 0.2s forwards;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .condition {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideUp 0.5s 0.4s forwards;
+        color: #a8c0ff;
+    }
+
+    .details {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-top: 40px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideUp 0.5s 0.6s forwards;
+    }
+
+    .detail-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 25px;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+
+    .detail-item i {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #a8c0ff;
+    }
+
+    .detail-item:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    @keyframes slideUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .loading {
+        display: none;
+        text-align: center;
+        color: white;
+        font-size: 1.2em;
+    }
+
+    .loading::after {
+        content: '';
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: white;
+        animation: spin 1s ease-in-out infinite;
+        margin-left: 10px;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    .error-message {
+        color: #ff6b6b;
+        text-align: center;
+        margin: 20px 0;
+        display: none;
+    }
